@@ -29,6 +29,9 @@ user/themes/*
 !user/themes/mytheme/*
 user/**/config/security.yaml
 
+# dynamic data
+data/*
+
 # Environments
 .env
 .gravenv
