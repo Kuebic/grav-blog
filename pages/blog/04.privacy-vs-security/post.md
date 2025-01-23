@@ -1,6 +1,9 @@
 ---
 title: 'Privacy vs. Security: The Eternal Battle Between "None of Your Business" and "Trust Me Bro"'
+media_order: privacy-security-lock-keyboard.jpg
 ---
+
+![](privacy-security-lock-keyboard.jpg "Hey, that's private")
 
 # Privacy vs. Security: The Eternal Battle Between "None of Your Business" and "Trust Me, Bro"
 
