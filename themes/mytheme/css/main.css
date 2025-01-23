@@ -603,6 +603,10 @@
 
 
 /* General dark mode styles */
+html {
+  color-scheme: dark !important;
+}
+
 html, body {
   border-color: #736b5e;
   color: #e8e6e3;
@@ -623,23 +627,23 @@ html, body {
 
 /* Logo */
 .logo-readium {
-  background-color: #181a1b;
+  background-color: var(--darkreader-neutral-background);
 }
 
 /* Teaser image */
 .teaserimage {
-  background-color: #181a1b;
+  background-color: var(--darkreader-neutral-background);
 }
 
 /* Blog header */
 .blog-header .blog-logo {
   border-color: #736b5e;
-  background-color: #181a1b;
+  background-color: var(--darkreader-neutral-background);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .blog-header .blog-title {
-  color: #e8e6e3;
+  color: var(--darkreader-neutral-text);
 }
 
 .blog-header .blog-description {
@@ -860,3 +864,4 @@ pre > code {
 .post-reading {
   color: #e8e6e3 !important; /* Force reading time color */
 }
+
