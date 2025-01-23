@@ -30,7 +30,8 @@ user/themes/*
 user/**/config/security.yaml
 
 # dynamic data
-/data/*
+data/*
+config/plugins/*
 
 # Environments
 .env
