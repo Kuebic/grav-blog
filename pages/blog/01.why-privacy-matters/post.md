@@ -1,9 +1,12 @@
 ---
 title: 'Why Privacy Matters (Even If You Think You’ve Got Nothing to Hide)'
+media_order: why-privacy-matters.jpg
 taxonomy:
     tag:
         - featured
 ---
+
+![](why-privacy-matters.jpg "Hey, that's private")
 
 So, you’ve got nothing to hide. That’s great! You’re a law-abiding, upstanding citizen who pays their taxes, recycles diligently, and always remembers to feed the cat. But here’s the thing: privacy isn’t just about hiding things—it’s about protecting your choices, your autonomy, and your right to control your own life.
 
@@ -68,6 +71,8 @@ Check your privacy settings: Most apps and websites let you control who sees you
 Be mindful of what you share: Before posting something online, ask yourself, “Would I be okay with this being public forever?”
 
 Use privacy tools: VPNs, ad blockers, and encrypted messaging apps can help keep your data safe.
+
+![](cameras-point.jpg "Hey, that's private")
 
 ## The Bottom Line
 Privacy isn’t about hiding—it’s about protecting. It’s about keeping your personal information safe, maintaining your freedom, and ensuring that you’re in control of your own life. So, the next time someone says, “I’ve got nothing to hide,” remind them: privacy isn’t just for people with secrets. It’s for everyone who values their autonomy, their security, and their right to live without being constantly watched.

@@ -7,6 +7,7 @@ use RocketTheme\Toolbox\Event\Event;
 class TinypngPlugin extends Plugin
 {
     protected $tinypng;
+    protected $processedImages = [];
 
     public static function getSubscribedEvents()
     {
@@ -30,6 +31,9 @@ class TinypngPlugin extends Plugin
         $this->enable([
             'onImageMediumSaved' => ['onImageMediumSaved', 0],
         ]);
+
+        // Load the list of already processed images
+        $this->loadProcessedImages();
     }
 
     public function onImageMediumSaved(Event $event)
@@ -50,9 +54,13 @@ class TinypngPlugin extends Plugin
             // Scan the folder for images
             $images = $this->scanFolderForImages($folderPath);
 
-            // Compress each image
+            // Compress each image (only if not already processed)
             foreach ($images as $image) {
-                $this->compressImage($image);
+                $relativePath = $this->getRelativePath($image);
+                if (!$this->isImageProcessed($relativePath)) {
+                    $this->compressImage($image);
+                    $this->markImageAsProcessed($relativePath);
+                }
             }
         }
     }
@@ -79,5 +87,55 @@ class TinypngPlugin extends Plugin
                 file_put_contents($path, $result);
             }
         }
+    }
+
+    protected function loadProcessedImages()
+    {
+        $cacheFile = $this->getCacheFilePath();
+        if (file_exists($cacheFile)) {
+            $this->processedImages = json_decode(file_get_contents($cacheFile), true) ?? [];
+        }
+    }
+
+    protected function isImageProcessed($relativePath)
+    {
+        return in_array($relativePath, $this->processedImages);
+    }
+
+    protected function markImageAsProcessed($relativePath)
+    {
+        if (!$this->isImageProcessed($relativePath)) {
+            $this->processedImages[] = $relativePath;
+            $this->saveProcessedImages();
+        }
+    }
+
+    protected function saveProcessedImages()
+    {
+        $cacheFile = $this->getCacheFilePath();
+        file_put_contents($cacheFile, json_encode($this->processedImages, JSON_PRETTY_PRINT));
+    }
+
+    protected function getCacheFilePath()
+    {
+        return __DIR__ . '/processed_images.json';
+    }
+
+    protected function getRelativePath($absolutePath)
+    {
+        // Get the Grav root directory
+        $gravRoot = $this->grav['locator']->findResource('');
+
+        // Convert the absolute path to a relative path
+        return ltrim(str_replace($gravRoot, '', $absolutePath), '/');
+    }
+
+    protected function getAbsolutePath($relativePath)
+    {
+        // Get the Grav root directory
+        $gravRoot = $this->grav['locator']->findResource('');
+
+        // Convert the relative path back to an absolute path
+        return $gravRoot . '/' . $relativePath;
     }
 }
