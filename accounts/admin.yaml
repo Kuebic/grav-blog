@@ -1,0 +1,11 @@
+state: enabled
+email: admin@menningmail.com
+fullname: 'Kenei Menning'
+title: Administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$RHOKoq0IiciohqcdNkxGIu13dKF8g0RG5Nvz8ovT8PVD1pyayN1Ty
