@@ -1,0 +1,20 @@
+name: mytheme
+slug: mytheme
+type: theme
+version: 0.0.1
+description: "mytheme modifies mediator"
+icon: bullseye
+author:
+  name: Kuebic
+  email: devs@getgrav.org
+  url: http://getgrav.org
+homepage: https://github.com/getgrav/grav-theme-mediator
+demo: http://demo.getgrav.org/mediator-skeleton
+keywords: mediator, theme, modern, fast, responsive, blog
+bugs: https://github.com/getgrav/grav-theme-mediator/issues
+license: MIT
+dependencies:
+  - { name: grav, version: '>=1.5.10' }
+
+form:
+  validation: loose

@@ -19,6 +19,6 @@ feed:
 
 pagination: true
 
-cover: shore.jpg
+cover: blue-wall.jpg
 ---
 
