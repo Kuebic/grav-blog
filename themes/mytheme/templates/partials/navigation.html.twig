@@ -1,0 +1,5 @@
+<ul {{ tree ? 'class="tree"' : '' }}>
+    {{ macros.nav_loop(pages) }}
+    {% include 'partials/langswitcher.html.twig' %} <!-- Existing language switcher -->
+    {% include 'partials/darkmodeswitcher.html.twig' %} <!-- Dark mode switcher -->
+</ul>

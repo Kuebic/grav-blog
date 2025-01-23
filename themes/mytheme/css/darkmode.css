@@ -1,0 +1,12 @@
+body.dark-mode {
+    background-color: #181a1b;
+    color: #e8e6e3;
+}
+
+body.dark-mode .blog-header .blog-title {
+    color: #e8e6e3;
+}
+
+body.dark-mode .content article {
+    border-bottom-color: #736b5e;
+}
